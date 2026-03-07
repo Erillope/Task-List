@@ -2,7 +2,6 @@ package com.example.taskprueba.task.infrastructure.repository;
 
 import java.util.List;
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -14,11 +13,9 @@ public interface TaskJpaRepository extends JpaRepository<TaskEntity, String> {
 
     Page<TaskEntity> findByUserId(String userId, Pageable pageable);
 
-    Page<TaskEntity> findByUserIdAndScheduledDateAndStartTimeAndEndTime(
+    Page<TaskEntity> findByUserIdAndScheduledDate(
         String userId,
         LocalDate scheduledDate,
-        LocalTime startTime,
-        LocalTime endTime,
         Pageable pageable
     );
     

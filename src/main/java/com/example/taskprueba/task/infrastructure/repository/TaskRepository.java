@@ -35,11 +35,9 @@ public class TaskRepository implements GetTask, SaveTask, DeleteTask {
     private Page<TaskEntity> getTasksByQuery(TaskFilterQuery query) {
         int page = query.page().getValue();
         int size = query.size().getValue();
-        return taskJpaRepository.findByUserIdAndScheduledDateAndStartTimeAndEndTime(
+        return taskJpaRepository.findByUserIdAndScheduledDate(
                 query.userId().getValue(),
-                query.scheduledDate().getScheduledDate(),
-                query.scheduledDate().getStartTime(),
-                query.scheduledDate().getEndTime(),
+                query.scheduledDate(),
                 PageRequest.of(page, size));
     }
 
@@ -47,7 +45,7 @@ public class TaskRepository implements GetTask, SaveTask, DeleteTask {
     public List<Task> filterTasks(TaskFilterQuery query) {
         Page<TaskEntity> entities;
         if (query.scheduledDate() != null) {
-            entities = getTasksByQuery(query);
+            entities = getTasksByQuery(query);            
         } else {
             entities = taskJpaRepository.findByUserId(
                     query.userId().getValue(),

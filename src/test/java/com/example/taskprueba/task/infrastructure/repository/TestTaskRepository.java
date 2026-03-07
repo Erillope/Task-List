@@ -78,7 +78,7 @@ class TestTaskRepository {
 		assertTrue(tasks.stream().allMatch(task -> task.getUserId().getValue().equals(taskA1.getUserId().getValue())));
 	}
 
-    private TaskSchedule prepareTasksForUserAndScheduleTest(UserID userId) {
+    private LocalDate prepareTasksForUserAndScheduleTest(UserID userId) {
         TaskSchedule scheduleMatch = new TaskSchedule(LocalDate.now().plusDays(3), LocalTime.of(14, 0), LocalTime.of(15, 0));
 		TaskSchedule scheduleOther = new TaskSchedule(LocalDate.now().plusDays(4), LocalTime.of(14, 0), LocalTime.of(15, 0));
 
@@ -96,13 +96,13 @@ class TestTaskRepository {
 		taskJpaRepository.save(TaskEntityMapper.toEntity(taskA2));
 		taskJpaRepository.save(TaskEntityMapper.toEntity(taskA3));
 
-        return scheduleMatch;
+        return scheduleMatch.getScheduledDate();
     }
 
 	@Test
 	void shouldFilterTasksByUserAndScheduleWithPagination() {
         UserID userId = UserID.uuid();
-		TaskSchedule scheduleMatch = prepareTasksForUserAndScheduleTest(userId);
+		LocalDate scheduleMatch = prepareTasksForUserAndScheduleTest(userId);
 
 		TaskFilterQuery query = new TaskFilterQuery(
 			userId,
@@ -115,9 +115,9 @@ class TestTaskRepository {
 
 		assertEquals(1, result.size());
 		assertEquals(userId.getValue(), result.get(0).getUserId().getValue());
-		assertEquals(scheduleMatch.getScheduledDate(), result.get(0).getSchedule().getScheduledDate());
-		assertEquals(scheduleMatch.getStartTime(), result.get(0).getSchedule().getStartTime());
-		assertEquals(scheduleMatch.getEndTime(), result.get(0).getSchedule().getEndTime());
+		assertEquals(scheduleMatch, result.get(0).getSchedule().getScheduledDate());
+		assertEquals(LocalTime.of(14, 0), result.get(0).getSchedule().getStartTime());
+		assertEquals(LocalTime.of(15, 0), result.get(0).getSchedule().getEndTime());
 	}
 
 	@Test

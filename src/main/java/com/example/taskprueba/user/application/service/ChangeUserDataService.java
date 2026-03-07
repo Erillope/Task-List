@@ -29,7 +29,7 @@ public class ChangeUserDataService implements ChangeUserDataUseCase{
         if (command.newUserName() != null) user.changeUserName(new UserName(command.newUserName()));
         
         saveUser.save(user);
-        
+
         return UserDTO.from(user);
     }
 }
