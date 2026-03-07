@@ -1,0 +1,30 @@
+
+.auth-user-page {
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid #3f3f46;
+    border-radius: 12px;
+    padding: 1.5rem;
+    background-color: #18181b;
+}
+
+.auth-user-page .title {
+    margin-bottom: 0.35rem;
+    font-weight: bold;
+    font-size: 3.5rem;
+}
+
+.auth-user-page .info {
+    margin-bottom: 1.25rem;
+    color: #a1a1aa;
+}
+
+.link {
+    color: #5d5db1 !important;
+    text-decoration: none !important;
+}
+
+.link:hover {
+    color: #7c7cd1 !important;
+    text-decoration: underline !important;
+}

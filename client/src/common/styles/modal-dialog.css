@@ -1,0 +1,25 @@
+
+.modal-dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #18181b;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    outline: none;
+}
+
+.modal-dialog .modal-dialog-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    color: #a1a1aa;
+}
+
+.modal-dialog .modal-dialog-close:hover {
+    color: #f4f4f5;
+    background-color: #551e1e;
+    cursor: pointer;
+}

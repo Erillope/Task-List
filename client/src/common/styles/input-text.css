@@ -1,0 +1,81 @@
+
+.input-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+}
+
+.text-field {
+    background-color: #09090b;
+    border-radius: 8px;
+}
+
+.text-field .MuiOutlinedInput-input {
+    color: #fafafa;
+    font-size: 0.9rem;
+    padding: 0.65rem 0.75rem;
+}
+
+.text-field .MuiOutlinedInput-root {
+    border-radius: 8px;
+}
+
+.text-field .MuiOutlinedInput-notchedOutline {
+    border-color: #3f3f46;
+}
+
+.text-field .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+    border-color: #a1a1aa;
+}
+
+.text-field .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #ffffff;
+    border-width: 2px;
+}
+
+.text-field .MuiSelect-icon {
+    color: #a1a1aa;
+}
+
+.calendar-input.empty input[type='date']::-webkit-datetime-edit {
+    color: #71717a;
+}
+
+.time-input.empty input[type='time']::-webkit-datetime-edit {
+    color: #71717a;
+}
+
+.text-field .select-placeholder {
+    color: #71717a;
+}
+
+.select-menu-paper {
+    background-color: #18181b !important;
+    color: #f4f4f5;
+    border: 1px solid #3f3f46;
+}
+
+.select-menu-paper .MuiMenuItem-root {
+    color: #f4f4f5;
+}
+
+.select-menu-paper .MuiMenuItem-root:hover {
+    background-color: #27272a;
+}
+
+.select-menu-paper .MuiMenuItem-root.Mui-selected {
+    background-color: #27272a;
+}
+
+.select-menu-paper .MuiMenuItem-root.Mui-selected:hover {
+    background-color: #3f3f46;
+}
+
+.start-icon {
+    color: #a1a1aa !important;
+}
+
+.end-icon {
+    color: #a1a1aa !important;
+}

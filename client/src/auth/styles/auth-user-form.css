@@ -1,0 +1,21 @@
+
+.auth-user-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.submit-button {
+    margin-top: 0.3rem;
+    color: #fafafa !important;
+    background-color: #2f2f46 !important;
+}
+
+.submit-button:hover {
+    background-color: #52525b !important;
+}
+
+.submit-button:disabled {
+    background-color: #a1a1aa !important;
+    color: #2f2f46 !important;
+}
